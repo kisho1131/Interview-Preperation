@@ -1,8 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 /*===========Your Code Here=============*/
+
 /* Given the String Str find the length of the longest Substring Without any
  * Repeating Character => (i.e) Find the Substring with all Unique Char */
+
 int longestSubstringKUniqueChar(string str) {
   map<char, int> mp;
   int j = 0;
