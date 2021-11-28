@@ -17,9 +17,9 @@ vector<int> FirstNegativeK(vector<int> arr, int k) {
       else
         ans.push_back(l.front());
 
-      if (arr[i] ==
-          l.front()) // If we have processed this element then remove the
-                     // element form the list as we move thr windows size
+      if (arr[i] == l.front())
+        // If we have processed this element then remove the
+        // element form the list as we move thr windows size
         l.pop_front();
       i++;
       j++;

@@ -37,8 +37,8 @@ int maximumSumSubarrayK(vector<int> arr, int k) {
 
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
-  vector<int> arr = {1, 4, 2, 10, 23, 3, 1, 0, 200, 300, 600};
-  int k = 4;
+  vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8};
+  int k = 3;
 
   int maxSum = maximumSumSubarrayK(arr, k);
   int maxSum_ = maximumSumSubarrayK_BruteForce(arr, k);
