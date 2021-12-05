@@ -12,6 +12,7 @@ int convertToInt(string s) {
   return ans;
 }
 
+
 bool numericCompare(pair<string, string> s1, pair<string, string> s2) {
   string key1 = s1.first;
   string key2 = s2.first;
@@ -31,7 +32,7 @@ string ExtractString(string str, int key) {
   /* string.c_str() give the underlying character array for the string
    * Represention */
 
-  while (key > 1) {
+while (key > 1) {
     s = strtok(NULL, " ");
     key--;
   }

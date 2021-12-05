@@ -11,6 +11,7 @@ int KnapSack(int wt[], int val[], int w, int n) {
     return KnapSack(wt, val, w, n - 1);
 }
 
+
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
   int val[] = {60, 100, 120};
