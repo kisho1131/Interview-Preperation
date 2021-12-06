@@ -37,16 +37,94 @@ set<vector<int>> Function(vector<int> nums, int n, int target) {
   return s;
 }
 
+// Approch : 2
+vector<vector<int>> Function_(vector<int> nums, int target) {
+  vector<vector<int>> ans;
+  set<vector<int>> s;
+  int sum = 0;
+  int n = nums.size();
+  for (int i = 0; i < n - 3; i++) {
+    for (int j = i + 1; j < n - 2; j++) {
+      int left = j + 1;
+      int right = n - 1;
+      while (left < right) {
+        sum = nums[i] + nums[j] + nums[left] + nums[right];
+        if (sum > target)
+          right = right - 1;
+        else if (sum == target) {
+          vector<int> res;
+          res.push_back(nums[i]);
+          res.push_back(nums[j]);
+          res.push_back(nums[left]);
+          res.push_back(nums[right]);
+          s.insert(res);
+          left = left + 1;
+        } else
+          left = left + 1;
+      }
+    }
+  }
+  for (auto itr : s) {
+    ans.push_back(itr);
+  }
+  return ans;
+}
+
+// Approch : 3 (Two Pointer with constant space)
+vector<vector<int>> fourSum(vector<int> &nums, int target) {
+  vector<vector<int>> res;
+  int n = nums.size();
+  if (n < 4)
+    return res;
+  sort(nums.begin(), nums.end());
+
+  for (int i = 0; i < n - 3; i++) {
+    if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
+      // nums[i] + nums[i+1] + nums[i+2] + nums[i+3] --> can give integer
+      // overflow
+      if (nums[i] + nums[i + 1] > target - nums[i + 2] - nums[i + 3])
+        break;
+      if (nums[i] + nums[n - 3] < target - nums[n - 2] - nums[n - 1])
+        continue;
+      for (int j = i + 1; j < n - 2; j++) {
+        if (j == i + 1 || (j > i + 1 && nums[j] != nums[j - 1])) {
+          if (nums[i] + nums[j] > target - nums[j + 1] - nums[j + 2])
+            break;
+          if (nums[i] + nums[j] < target - nums[n - 2] - nums[n - 1])
+            continue;
+          int l = j + 1, h = n - 1;
+          while (l < h) {
+            if (nums[l] + nums[h] == target - nums[i] - nums[j]) {
+              res.push_back({nums[i], nums[j], nums[l], nums[h]});
+              while (l < h &&
+                     nums[l] == nums[l + 1]) // Eleminating the duplictes
+                                             // (Skiping the duplicate values)
+                l++;
+              while (l < h && nums[h] == nums[h - 1])
+                h--;
+              l++;
+              h--;
+            } else if (nums[l] + nums[h] < target - nums[i] - nums[j])
+              l++;
+            else
+              h--;
+          }
+        }
+      }
+    }
+  }
+
+  return res;
+}
 /* =========================== Main() =========================== */
 int main() {
   vector<int> nums = {-2, -1, 0, 0, 1, 2, 3, 0};
   int n = nums.size();
   int target = 3;
-  set<vector<int>> s = Function(nums, n, target);
-  for (auto itr : s) {
-    for (auto ele : itr) {
+  vector<vector<int>> ans = Function_(nums, target);
+  for (auto it : ans) {
+    for (auto ele : it)
       cout << ele << " ";
-    }
     cout << endl;
   }
   cout << endl;
