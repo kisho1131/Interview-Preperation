@@ -54,7 +54,8 @@ vector<int> rightBound(Node *root) {
 void leavesNode(Node *root, vector<int> &leaves) {
   if (root == NULL)
     return;
-  leavesNode(root->left, leaves);
+  leavesNode(root->left,
+             leaves); // Inorder because we need the leaves from left to right
   if (isLeaves(root))
     leaves.push_back(root->val);
   leavesNode(root->right, leaves);

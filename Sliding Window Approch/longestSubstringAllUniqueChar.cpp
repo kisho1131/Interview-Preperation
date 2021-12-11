@@ -5,7 +5,7 @@ using namespace std;
 /* Given the String Str find the length of the longest Substring Without any
  * Repeating Character => (i.e) Find the Substring with all Unique Char */
 
-int longestSubstringKUniqueChar(string str) {
+int longestSubstringAllUniqueChar(string str) {
   map<char, int> mp;
   int j = 0;
   int i = 0;
@@ -30,7 +30,7 @@ int longestSubstringKUniqueChar(string str) {
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
   string str = "abaabcdef";
-  cout << longestSubstringKUniqueChar(str);
+  cout << longestSubstringAllUniqueChar(str);
   cout << endl;
   return 0;
 }

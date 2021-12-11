@@ -3,7 +3,7 @@ using namespace std;
 /*===========Your Code Here=============*/
 
 bool isPossible(int *arr, int maxPage, int n, int k) {
-  if (k > n)
+  if (k > n) // k ->no of student to which the book is allocated
     return false;
   int student = 1;
   int sum = 0;
@@ -11,7 +11,8 @@ bool isPossible(int *arr, int maxPage, int n, int k) {
     sum += arr[i];
     if (sum > maxPage) {
       student++;
-      sum = arr[i];
+      sum = arr[i]; //  Here we add new student, hence the current sum of pages
+                    //  will be equal to arr[i];
     }
     if (student > k)
       return false;

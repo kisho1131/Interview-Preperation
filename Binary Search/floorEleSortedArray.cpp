@@ -43,7 +43,7 @@ int CeilElement(int *arr, int n, int ele) {
 int main(int argc, char const *argv[]) {
   int arr[] = {1, 2, 3, 4, 8, 10, 10, 12, 14};
   int n = sizeof(arr) / sizeof(arr[0]);
-  cout << arr[CeilElement(arr, n, 5)];
+  cout << arr[FloorElement(arr, n, 5)];
   cout << endl;
   return 0;
 }

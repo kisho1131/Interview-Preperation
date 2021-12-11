@@ -16,7 +16,8 @@ pair<int, int> SearchSortedMatrix(int arr[4][4], int n, int m, int key) {
   }
   return make_pair(-1, -1);
 }
-
+// Time complecity => O(N+M)
+// N-: no of rows, M-: no of column
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
   int arr[4][4] = {
