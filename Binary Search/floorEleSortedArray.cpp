@@ -32,7 +32,7 @@ int CeilElement(int *arr, int n, int ele) {
     else if (ele < arr[mid]) {
       ed = mid - 1;
       res = mid;
-    } else if (ele > arr[mid]) {
+    } else if (ele >  arr[mid]) {
       st = mid + 1;
     }
   }

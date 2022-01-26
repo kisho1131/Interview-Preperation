@@ -21,11 +21,12 @@ vector<vector<int>> spiralOrder(TreeNode *root) {
         q.push(root->right);
       level.push_back(node->data);
     }
+    // curr[sz - i - 1] = tmp->val; /* even level insert from end. 3, 2, 1, 0.
+    // (sz - i - 1) to get the index from end */
     if (!leftToRight) {
       reverse(level.begin(), level.end());
       ans.push_back(level);
     } else {
-
       ans.push_back(level);
     }
     leftToRight = !leftToRight;

@@ -73,6 +73,35 @@ vector<int> IrerativePostOrder(TreeNode *root) {
   return postOrder;
 }
 
+void Traversal(TreeNode *root) {
+  vector<int> pre, post, in;
+  if (root == NULL)
+    return;
+  stack<pair<TreeNode *, int>> s;
+  s.push({root, 1});
+  while (!s.empty()) {
+    auto node = s.top();
+    s.pop();
+    if (node.second == 1) {
+      pre.push_back(node.first->data);
+      node.second++;
+      s.push(node);
+      if (node.first->left)
+        s.push({node.first->left, 1});
+    }
+    if (node.second == 2) {
+      in.push_back(node.first->data);
+      node.second++;
+      s.push(node);
+      if (node.first->right)
+        s.push({node.first->right, 1});
+    }
+    if (node.second == 3) {
+      post.push_back(node.first->data);
+    }
+  }
+}
+
 /* =========================== Main() =========================== */
 int main() {
   TreeNode *root = new TreeNode(30);
