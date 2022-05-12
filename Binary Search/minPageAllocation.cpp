@@ -3,7 +3,7 @@ using namespace std;
 /*===========Your Code Here=============*/
 
 bool isPossible(int *arr, int maxPage, int n, int k) {
-  if (k > n) // k ->no of student to which the book is allocated
+  if (k > n) // k -> no of student to which the book is allocated
     return false;
   int student = 1;
   int sum = 0;
@@ -65,5 +65,4 @@ LeetCode:
 875 Koko Eating Bananas Minimize
 774 Max Distance to Gas Station
 410 Split Array Largest Sum
-
 */
