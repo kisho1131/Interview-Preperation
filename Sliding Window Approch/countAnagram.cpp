@@ -4,7 +4,8 @@ using namespace std;
 // Generate a map of all character occurances of the 2nd string, i.e char and
 // its count. The window size becomes the length of 2nd string, as the anangrams
 // wil also be of this length, and another variable count denotes the distinct
-// characters left in a sliding window. In a window if the current character is
+// characters left in a sliding window.
+// In a window if the current character is
 // present in map, then decrease its count, and if the count becomes 0, decrease
 // the 'count' variable. If the window size is lesser than k just move forward
 // the window When the window is hit -> If the count is 0, it means all the
@@ -65,11 +66,11 @@ int main() {
   // Explanation : Anagrams of the word for - for, orf, ofr appear in the text
   // and hence the count is 3.
 
-  string s = "forxxorfxdofr";
-  string ana = "for";
+  string s = "ababababababc";
+  string ana = "ab";
 
   int ans = solve(s, ana);
-  cout << and;
+  cout << ans;
 
   return 0;
 }

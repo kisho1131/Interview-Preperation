@@ -20,7 +20,7 @@ int BinarySearch(int *arr, int n, int x) {
 int main(int argc, char const *argv[]) {
   int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13};
   int n = sizeof(arr) / sizeof(int);
-  int index = BinarySearch(arr, n, 1);
+  int index = BinarySearch(arr, n, 9);
   cout << "Index: " << index;
   cout << endl;
   return 0;

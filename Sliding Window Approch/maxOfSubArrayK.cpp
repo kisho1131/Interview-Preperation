@@ -8,7 +8,7 @@ vector<int> maxOfSubArray(vector<int> arr, int k) {
   vector<int> ans;
   list<int> l;
   while (j < arr.size()) {
-    while (l.size() > 0 && l.front() < arr[j]) {
+    while (l.size() > 0 && l.back() < arr[j]) {
       l.pop_front();
     }
     l.push_back(arr[j]);
@@ -39,7 +39,7 @@ vector<int> maxOfSubArrayBruteForce(vector<int> arr, int k) {
 
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
-  vector<int> arr = {1, -2, 5, 3, 4, 6, -7, -1, -3};
+  vector<int> arr = {1, 3, 1, 2, 0, 5};
   int k = 3;
   vector<int> ans = maxOfSubArray(arr, k);
   for (auto ele : ans) {
