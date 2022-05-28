@@ -25,7 +25,7 @@ int longestSubstringKUniqueChar(string str, int k) {
 
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
-  string str = "awexee";
+  string str = "aabacbebebe";
   int k = 3;
   cout << longestSubstringKUniqueChar(str, k);
   cout << endl;
