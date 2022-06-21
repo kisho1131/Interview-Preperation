@@ -27,7 +27,7 @@ int PeakElement(int *arr, int n) {
 
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
-  int arr[] = {1, 2, 3, 6, 4};
+  int arr[] = {5, 10, 12, 20, 19, 18, 17, 15};
   int n = sizeof(arr) / sizeof(arr[0]);
   cout << PeakElement(arr, n);
   cout << endl;

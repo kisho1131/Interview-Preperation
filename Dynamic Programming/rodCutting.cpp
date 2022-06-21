@@ -37,7 +37,7 @@ int RodCuttingProblem(int price[], int n) {
 
 /* =========================== Main() =========================== */
 int main() {
-  int price[] = {1, 5, 8, 9, 10, 17, 17, 20};
+  int price[] = {1, 3, 2, 4, 5, 6, 7};
   int n = sizeof(price) / sizeof(price[0]);
   cout << RodCuttingProblem(price, n);
   return 0;
