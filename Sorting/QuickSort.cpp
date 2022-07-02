@@ -26,7 +26,7 @@ int Partition(int a[], int low, int high) {
   return index;
 }
 
-int QuickSort(int a[], int low, int high) {
+void QuickSort(int a[], int low, int high) {
   int pindex;
   if (low < high) {
     pindex = Partition(a, low, high);
@@ -34,12 +34,12 @@ int QuickSort(int a[], int low, int high) {
     QuickSort(a, low, pindex - 1);
     QuickSort(a, pindex + 1, high);
   }
-  return 0;
+  // return 0;
 }
 
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
-  int arr[] = {64, 34, 25, 12, 22, 11, 90};
+  int arr[] = {7, 9, 4, 8, 3, 6, 2, 1, 0, 10, 17, 12, 4, 5};
   int n = sizeof(arr) / sizeof(arr[0]);
   QuickSort(arr, 0, n - 1);
   for (int i = 0; i < n; i++)
