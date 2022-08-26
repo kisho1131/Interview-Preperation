@@ -20,7 +20,7 @@ int LargestSubarrayOfSumK(vector<int> arr, int k) {
     if (sum < k)
       j++;
     else if (sum == k) {
-      maxSize = (maxSize, (j - i + 1));
+      maxSize = max(maxSize, (j - i + 1));
     } else if (sum > k) {
       while (sum > k) {
         sum -= arr[i];
@@ -34,8 +34,8 @@ int LargestSubarrayOfSumK(vector<int> arr, int k) {
 
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
-  vector<int> arr = {4, 1, 1, 1, 2, 3, 5}; // Work for +ve elements Only
-  int k = 5;
+  vector<int> arr = {-5, 8, -14, 2, 4, 12}; // Work for +ve elements Only
+  int k = -5;
   int maxSize = LargestSubarrayOfSumK(arr, k);
   cout << maxSize;
   cout << endl;

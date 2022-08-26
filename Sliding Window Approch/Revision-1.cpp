@@ -51,6 +51,7 @@ int countOccuranceAnagram(string str, string ana) {
       }
     }
   }
+  return ans;
 }
 
 /*============Main()====================*/

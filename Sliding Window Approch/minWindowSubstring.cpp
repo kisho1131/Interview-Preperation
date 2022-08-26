@@ -20,9 +20,7 @@ string MinWindowSubstring(string str, string k) {
       mp[str[j]]--;
       if (mp[str[j]] == 0)
         count--;
-      j++;
-    } else
-      j++;
+    }
     if (count == 0) {
       while (count == 0) {
         // cout << minLen << endl;
@@ -37,6 +35,7 @@ string MinWindowSubstring(string str, string k) {
           i++;
         }
       }
+      j++;
     }
   }
   string ans = str.substr(i - 1, j);
@@ -77,7 +76,7 @@ int main(int argc, char const *argv[]) {
   string str = "ADOBECODEBANC";
   string k = "ABC";
   cout << str.length() << endl;
-  cout << MinWindowSubstring_(str, k);
+  cout << MinWindowSubstring(str, k);
   cout << endl;
   return 0;
 }
