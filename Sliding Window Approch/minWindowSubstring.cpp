@@ -71,6 +71,38 @@ string MinWindowSubstring_(string str, string k) {
   return "";
 }
 
+string minnimumWindowSubstring(string str, string ptr){
+  map<char, int>mp;
+  for(ch : ptr)
+   mp[ch]++;
+
+  int count = mp.size();
+  minLen = INT_MAX;
+  int i,j=0;
+  while( j < str.lenght()){
+    if(mp[str[j]] != mp.end()){
+      mp[str[j]]--;
+      if(mp[str[j]] == 0) count--;
+    }
+
+    if(count > 0) j++;
+    while(count == 0){
+      minLen = min(minLen, j-i+1);
+      if(mp[str[i]] == mp.end())
+       i++;
+      /* Slide the window and remove the calculation */
+      else if(mp[str[i]] != mp.end()){
+        mp[str[i]]++;
+        if(mp[str[i]] > 0)
+          count++;
+        i++;
+      }
+      /* Removed the calculation before sliding the window.. */
+    }
+    j++;
+ }
+}
+
 /*============Main()====================*/
 int main(int argc, char const *argv[]) {
   string str = "ADOBECODEBANC";
