@@ -32,7 +32,7 @@ int minPageAllocation(int *arr, int n, int m) {
       end = mid - 1;
       res = mid;
     } else
-      start = mid + 1;
+    start = mid + 1;
   }
   return res;
 }

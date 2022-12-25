@@ -19,6 +19,7 @@ int FindRotation(int *arr, int n) {
     else if (arr[mid] <= arr[end])
       end = mid - 1;
   }
+
   return -1;
 }
 

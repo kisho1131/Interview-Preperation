@@ -14,22 +14,22 @@ int searchRotatedArray(int *arr, int n, int target) {
           target <= arr[mid]) // check if the "target" lie in the first half
         end = mid - 1;
       else
-        start = mid + 1;
-    }
+       start = mid + 1;
+   }
 
     /* If the second half is sorted */
-    if (arr[mid] <= arr[end]) {
-      if (target >= arr[mid] &&
+   if (arr[mid] <= arr[end]) {
+    if (target >= arr[mid] &&
           target <= arr[end]) // check if the "target" lie in the second half
-        start = mid + 1;
-      else
-        end = mid - 1;
-    }
+      start = mid + 1;
+    else
+      end = mid - 1;
   }
-  return -1;
+}
+return -1;
 }
 
-/*============Main()====================*/
+/*============ Main()====================*/
 int main(int argc, char const *argv[]) {
   int arr[] = {3, 4, 5, 1, 2};
   int n = sizeof(arr) / sizeof(arr[0]);

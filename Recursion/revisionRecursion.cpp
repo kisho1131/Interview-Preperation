@@ -157,34 +157,6 @@ void PowerSet(vector<int> arr, vector<int> &ds, int idx) {
 
 /* ========== Main Function ============== */
 int main() {
-  // int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
-  // int n = sizeof(arr) / sizeof(arr[0]);
-  // int st = 0;
-  // int ed = n - 1;
-  // // reverseArray(arr, st, ed);
-  // // for (auto ele : arr)
-  // //   cout << ele << " ";
-  //
-  // // string str = "aabraa";
-  // // cout << palindrome(str, 0, str.length() - 1);
-  // // cout << endl;
-  // // GenerateParenthesis(str, 2, 2);
-  // string str = "abc";
-  // int n1 = str.length() - 1;
-  // int itr = 0;
-  // string op = "";
-  // set<string> ans;
-  // Permutation(str, itr, n1, ans);
-  // for (auto ele : ans)
-  //   cout << ele << " ";
-  // int n = 4;
-  // AllPermutation(n);
-  // string str = "radar";
-  // // palindromePartation(str);
-  // if (PalindromeFunction(str, 0, str.length() - 1))
-  //   cout << "Palindrome";
-  // else
-  //   cout << "Not Palindrome";
   vector<int> arr = {1, 2, 3, 4};
   vector<int> ds;
   PowerSet(arr, ds, 0);
